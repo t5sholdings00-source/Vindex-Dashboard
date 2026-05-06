@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
   <title>T5S Vindex · Dashboard</title>
 
-  <link rel="icon" type="image/png" href="assets/llogo nb.png"/>
-  <link rel="apple-touch-icon" href="assets/llogo nb.png"/>
+  <link rel="icon" type="image/png" href="assets/llogo nb nb.png"/>
+  <link rel="apple-touch-icon" href="assets/llogo nb nb.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -152,7 +151,6 @@
     .cb{padding:1.2rem 1.4rem}
     .empty{font-size:.88rem;font-style:italic;color:var(--dim);padding:1.2rem 0;text-align:center}
 
-    /* PROPERTY / DEAL */
     .deal{padding:1.2rem 1.4rem;border-bottom:.5px solid var(--border);position:relative;transition:background .2s;will-change:background}
     .deal:last-child{border-bottom:none}
     .deal::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);opacity:0;transition:opacity .2s;pointer-events:none}
@@ -169,7 +167,6 @@
     .dm-val{font-size:.82rem;font-style:italic;color:var(--chrome)}
     .deal-note{margin-top:.6rem;font-size:.8rem;font-style:italic;color:var(--dim2);line-height:1.6;border-top:.5px solid var(--border);padding-top:.55rem}
 
-    /* FINANCIALS TABLE */
     .fin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:1.2rem}
     .fgc{background:var(--bg2);padding:1.1rem 1.3rem}
     .fg-lbl{font-family:'Cinzel',serif;font-size:.35rem;letter-spacing:.38em;color:var(--dim);text-transform:uppercase;margin-bottom:.35rem}
@@ -181,7 +178,6 @@
     .ft tr:hover td{background:var(--gold-glow)}
     .ft-lbl{font-family:'Cinzel',serif;font-size:.32rem;letter-spacing:.28em;color:var(--dim);text-transform:uppercase;font-style:normal;display:block;margin-bottom:.18rem}
 
-    /* ANNOUNCEMENTS */
     .ann{padding:1.2rem 1.4rem;border-bottom:.5px solid var(--border);transition:background .2s;position:relative}
     .ann:last-child{border-bottom:none}
     .ann:hover{background:var(--gold-glow)}
@@ -198,7 +194,6 @@
     .fb{background:transparent;border:.5px solid var(--border);color:var(--dim);font-family:'Cinzel',serif;font-size:.36rem;letter-spacing:.22em;padding:.42rem .75rem;cursor:pointer;text-transform:uppercase;transition:all .2s}
     .fb:hover,.fb.active{border-color:var(--gold);color:var(--gold)}
 
-    /* ACCOUNT */
     .tier-band{display:flex;align-items:center;justify-content:space-between;border:.5px solid var(--border-hi);padding:1.3rem 1.6rem;margin-bottom:1.2rem;flex-wrap:wrap;gap:1rem;background:rgba(200,169,110,.025)}
     .tb-tier-lbl{font-family:'Cinzel',serif;font-size:.35rem;letter-spacing:.38em;color:var(--dim);text-transform:uppercase;margin-bottom:.3rem}
     .tb-tier-val{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.18em;color:var(--gold)}
@@ -213,7 +208,6 @@
     .ln-text{font-family:'Cinzel',serif;font-size:.45rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;line-height:1.9}
     .ln-text span{color:var(--red-hi)}
 
-    /* ACTIVITY */
     .act-list{max-height:260px;overflow-y:auto;padding:0 1.4rem}
     .act-list::-webkit-scrollbar{width:2px}
     .act-list::-webkit-scrollbar-thumb{background:var(--border)}
@@ -224,11 +218,9 @@
     .act-time{font-family:'Cinzel',serif;font-size:.32rem;letter-spacing:.18em;color:var(--dim);margin-bottom:.12rem}
     .act-txt{font-size:.82rem;font-style:italic;color:var(--chrome);line-height:1.5}
 
-    /* ADMIN */
     .adm-row{display:grid;grid-template-columns:1fr 160px 90px;gap:.8rem;align-items:center;padding:.95rem 0;border-bottom:.5px solid var(--border)}
     .adm-row:last-child{border-bottom:none}
 
-    /* BUTTONS */
     .btn{background:transparent;border:.5px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.44rem;letter-spacing:.35em;padding:.7rem 1.2rem;cursor:pointer;text-transform:uppercase;transition:background .25s,color .25s}
     .btn:hover{background:var(--gold);color:var(--bg)}
     .btn.ghost{border-color:var(--border);color:var(--dim2)}
@@ -237,13 +229,11 @@
     .btn:disabled{opacity:.38;cursor:not-allowed}
     .btn-row{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center}
 
-    /* PROPERTY TYPE TAGS */
     .prop-tag{font-family:'Cinzel',serif;font-size:.34rem;letter-spacing:.2em;border:.5px solid var(--border);color:var(--dim2);padding:.18rem .5rem;text-transform:uppercase;margin-right:.4rem}
     .prop-tag.residential{color:var(--gold);border-color:rgba(200,169,110,.3)}
     .prop-tag.commercial{color:#60a5fa;border-color:rgba(96,165,250,.3)}
     .prop-tag.mixed{color:#a78bfa;border-color:rgba(167,139,250,.3)}
 
-    /* ── FIELD OPS ── */
     .wo{padding:1.2rem 1.4rem;border-bottom:.5px solid var(--border);position:relative;transition:background .2s}
     .wo:last-child{border-bottom:none}
     .wo::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;opacity:0;transition:opacity .2s;pointer-events:none}
@@ -268,7 +258,6 @@
     .wm-val{font-size:.82rem;font-style:italic;color:var(--chrome)}
     .wo-note{font-size:.8rem;font-style:italic;color:var(--dim2);line-height:1.6;border-top:.5px solid var(--border);padding-top:.5rem;margin-top:.4rem}
 
-    /* VENDOR */
     .vendor-row{padding:1rem 1.4rem;border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;transition:background .2s}
     .vendor-row:last-child{border-bottom:none}
     .vendor-row:hover{background:var(--gold-glow)}
@@ -281,7 +270,6 @@
     .vn-status-ok{font-family:'Cinzel',serif;font-size:.33rem;letter-spacing:.2em;color:#22c55e;text-transform:uppercase}
     .vn-status-na{font-family:'Cinzel',serif;font-size:.33rem;letter-spacing:.2em;color:var(--dim);text-transform:uppercase}
 
-    /* INSPECTIONS */
     .insp-row{padding:1rem 1.4rem;border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;transition:background .2s}
     .insp-row:last-child{border-bottom:none}
     .insp-row:hover{background:var(--gold-glow)}
@@ -306,7 +294,6 @@
     .cl-avatarBox,.cl-userButtonAvatarBox{border-radius:50%!important;overflow:hidden!important}
     .cl-avatar,.cl-userButtonAvatar{border-radius:50%!important}
 
-    /* RESPONSIVE */
     @media(max-width:900px){
       .stat-bar{grid-template-columns:1fr 1fr}
       .g2{grid-template-columns:1fr}
@@ -389,7 +376,6 @@
 
   <main id="main">
 
-    <!-- OVERVIEW -->
     <div class="panel active" id="p-overview">
       <div class="ph">
         <div class="ph-left">
@@ -427,7 +413,6 @@
       </div>
     </div>
 
-    <!-- PROPERTIES -->
     <div class="panel" id="p-properties">
       <div class="ph">
         <div class="ph-left"><div class="ph-eyebrow">Portfolio</div><div class="ph-title">Properties</div><div class="ph-sub">All properties assigned to your Vindex account.</div></div>
@@ -437,7 +422,6 @@
       <div id="propsContent"></div>
     </div>
 
-    <!-- FINANCIALS -->
     <div class="panel" id="p-financials">
       <div class="ph">
         <div class="ph-left"><div class="ph-eyebrow">Capital</div><div class="ph-title">Financials</div><div class="ph-sub">Portfolio valuation and capital deployment summary.</div></div>
@@ -460,7 +444,6 @@
       </div>
     </div>
 
-    <!-- FIELD OPS -->
     <div class="panel" id="p-fieldops">
       <div class="ph">
         <div class="ph-left">
@@ -474,16 +457,12 @@
           <button class="btn sm ghost" onclick="fetchFieldOps(true)">↺ Refresh</button>
         </div>
       </div>
-
-      <!-- STATS -->
       <div class="stat-bar" id="opsStatBar">
         <div class="sc"><div class="sc-lbl">Open Orders</div><div class="sc-val" id="opsOpen" style="color:#ef4444">—</div></div>
         <div class="sc"><div class="sc-lbl">In Progress</div><div class="sc-val" id="opsInProg" style="color:var(--gold)">—</div></div>
         <div class="sc"><div class="sc-lbl">Completed (30d)</div><div class="sc-val" id="opsDone" style="color:#22c55e">—</div></div>
         <div class="sc"><div class="sc-lbl">Next Inspection</div><div class="sc-val" id="opsNextInsp" style="font-size:.6rem">—</div></div>
       </div>
-
-      <!-- WORK ORDERS -->
       <div class="card g-full">
         <div class="ch">
           <span class="ct">Work Orders</span>
@@ -499,8 +478,6 @@
         </div>
         <div id="woList"><div class="empty" style="padding:1.5rem">Loading work orders…</div></div>
       </div>
-
-      <!-- NEW WORK ORDER FORM (hidden by default) -->
       <div id="newWOForm" class="card g-full" style="display:none">
         <div class="ch"><span class="ct">New Work Order</span><button class="btn sm ghost" onclick="hideNewWOForm()">✕ Cancel</button></div>
         <div class="cb" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
@@ -545,8 +522,6 @@
           </div>
         </div>
       </div>
-
-      <!-- VENDORS + INSPECTIONS -->
       <div class="g2">
         <div class="card">
           <div class="ch">
@@ -554,7 +529,6 @@
             <button class="btn sm ghost" onclick="showAddVendorForm()">+ Add</button>
           </div>
           <div id="vendorList"><div class="empty" style="padding:1rem">Loading vendors…</div></div>
-          <!-- Add vendor form -->
           <div id="addVendorForm" style="display:none;border-top:.5px solid var(--border);padding:1rem 1.4rem">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem">
               <input id="vName" placeholder="Company name" style="background:transparent;border:.5px solid var(--border);color:var(--white);font-family:'Cormorant Garamond',serif;padding:.6rem .8rem;outline:none;width:100%"/>
@@ -568,14 +542,12 @@
             </div>
           </div>
         </div>
-
         <div class="card">
           <div class="ch">
             <span class="ct">Inspections</span>
             <button class="btn sm ghost" onclick="showAddInspForm()">+ Schedule</button>
           </div>
           <div id="inspList"><div class="empty" style="padding:1rem">Loading inspections…</div></div>
-          <!-- Add inspection form -->
           <div id="addInspForm" style="display:none;border-top:.5px solid var(--border);padding:1rem 1.4rem">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem">
               <input id="iProperty" placeholder="Property address" style="background:transparent;border:.5px solid var(--border);color:var(--white);font-family:'Cormorant Garamond',serif;padding:.6rem .8rem;outline:none;width:100%"/>
@@ -597,7 +569,6 @@
       </div>
     </div>
 
-    <!-- ANNOUNCEMENTS -->
     <div class="panel" id="p-announcements">
       <div class="ph">
         <div class="ph-left"><div class="ph-eyebrow">Communications</div><div class="ph-title">Announcements</div><div class="ph-sub">Posted from T5S. Refreshes every 15 minutes.</div></div>
@@ -612,7 +583,6 @@
       <div id="annList" class="card"><div class="empty" style="padding:1.5rem">Loading…</div></div>
     </div>
 
-    <!-- ACCOUNT -->
     <div class="panel" id="p-account">
       <div class="ph"><div class="ph-left"><div class="ph-eyebrow">Profile</div><div class="ph-title">My Account</div></div><div class="ph-rule"></div></div>
       <div id="admBadgeWrap" style="display:none"><div class="adm-badge"><span>⬡ T5S Administration · Executive Access</span></div></div>
@@ -634,7 +604,6 @@
       </div>
     </div>
 
-    <!-- ADMIN -->
     <div class="panel" id="p-admin">
       <div class="ph"><div class="ph-left"><div class="ph-eyebrow" style="color:var(--gold)">Executive</div><div class="ph-title">Admin Panel</div></div><div class="ph-rule"></div></div>
       <div class="stat-bar" style="margin-bottom:1.5rem">
@@ -662,7 +631,6 @@
   </main>
 </div>
 
-<!-- MOBILE BOTTOM NAV -->
 <div id="bottomNav">
   <div class="bn-inner">
     <div class="bn-item active" data-p="overview" onclick="goTo('overview')"><span class="bn-ico">◈</span><span class="bn-lbl">Overview</span></div>
@@ -725,7 +693,8 @@ function populateDash(user){
   const name=user.fullName||user.firstName||'Member';
   const email=user.primaryEmailAddress?.emailAddress||'—';
   const isAdmin=meta.role==='admin';
-  const tier=parseInt(lsMeta.tier)||parseInt(meta.tier)||4;
+  /* ── FIXED: Clerk publicMetadata takes priority over localStorage cache ── */
+  const tier=parseInt(meta.tier)||parseInt(lsMeta.tier)||4;
   const role=meta.role||lsMeta.role||'—';
   const joined=user.createdAt?new Date(user.createdAt).toLocaleDateString('en-US',{month:'long',year:'numeric'}):'—';
   const props=Array.isArray(meta.active_deals)?meta.active_deals:[];
@@ -824,14 +793,7 @@ function renderFin(props,tier,isAdmin){
   }).join('');
 }
 
-/* ══════════════════════════════════
-   FIELD OPS — Supabase integration
-   Tables needed:
-     t5s_work_orders  — id, wo_id, title, property, type, priority, status, vendor, cost, notes, created_at, updated_at
-     t5s_vendors      — id, name, trade, phone, email, rating, active, created_at
-     t5s_inspections  — id, property, type, date, result, created_at
-   ══════════════════════════════════ */
-
+/* ── FIELD OPS ── */
 async function fetchFieldOps(manual=false){
   try{
     const [woRes,vRes,iRes]=await Promise.all([
@@ -839,25 +801,16 @@ async function fetchFieldOps(manual=false){
       fetch(`${SB_URL}/rest/v1/t5s_vendors?select=*&order=name.asc`,{headers:SB_H}),
       fetch(`${SB_URL}/rest/v1/t5s_inspections?select=*&order=date.desc`,{headers:SB_H})
     ]);
-
-    if(woRes.ok) _workOrders=await woRes.json(); else _workOrders=[];
-    if(vRes.ok)  _vendors=await vRes.json();     else _vendors=[];
-    if(iRes.ok)  _inspections=await iRes.json(); else _inspections=[];
-
-    renderWorkOrders();
-    renderVendors();
-    renderInspections();
-    updateOpsStats();
+    if(woRes.ok)_workOrders=await woRes.json();else _workOrders=[];
+    if(vRes.ok)_vendors=await vRes.json();else _vendors=[];
+    if(iRes.ok)_inspections=await iRes.json();else _inspections=[];
+    renderWorkOrders();renderVendors();renderInspections();updateOpsStats();
     setSbStatus(true,'Database Online · 15 Min Timer');
     if(manual)toast('Field Ops refreshed');
   }catch(e){
-    console.error('fetchFieldOps',e);
-    setSbStatus(false,'Supabase error');
+    console.error('fetchFieldOps',e);setSbStatus(false,'Supabase error');
     if(manual)toast('Refresh failed',true);
-    // Graceful fallback: show empty state instead of broken UI
-    renderWorkOrdersFallback();
-    renderVendorsFallback();
-    renderInspectionsFallback();
+    renderWorkOrdersFallback();renderVendorsFallback();renderInspectionsFallback();
   }
 }
 
@@ -866,31 +819,13 @@ function updateOpsStats(){
   const inProg=_workOrders.filter(w=>w.status==='in-progress').length;
   const thirty=new Date();thirty.setDate(thirty.getDate()-30);
   const done=_workOrders.filter(w=>w.status==='completed'&&new Date(w.updated_at||w.created_at)>=thirty).length;
-  setText('opsOpen',String(open||'0'));
-  setText('opsInProg',String(inProg||'0'));
-  setText('opsDone',String(done||'0'));
-
-  // Next upcoming inspection
+  setText('opsOpen',String(open||'0'));setText('opsInProg',String(inProg||'0'));setText('opsDone',String(done||'0'));
   const upcoming=_inspections.filter(i=>i.result==='upcoming'&&i.date).sort((a,b)=>new Date(a.date)-new Date(b.date));
-  if(upcoming.length){
-    const d=new Date(upcoming[0].date);
-    setText('opsNextInsp',d.toLocaleDateString('en-US',{month:'short',day:'numeric'}));
-  }else setText('opsNextInsp','None');
-
-  // Badge for open urgent orders
-  if(open>0){
-    const ob=document.getElementById('opsBadge');if(ob)ob.style.display='block';
-    const dot=document.getElementById('bnOpsDot');if(dot)dot.classList.add('show');
-  }
+  if(upcoming.length){const d=new Date(upcoming[0].date);setText('opsNextInsp',d.toLocaleDateString('en-US',{month:'short',day:'numeric'}));}else setText('opsNextInsp','None');
+  if(open>0){const ob=document.getElementById('opsBadge');if(ob)ob.style.display='block';const dot=document.getElementById('bnOpsDot');if(dot)dot.classList.add('show');}
 }
 
-/* ── WORK ORDERS ── */
-function filterWO(status,btn){
-  _woFilter=status;
-  document.querySelectorAll('#p-fieldops .fb').forEach(b=>b.classList.remove('active'));
-  if(btn)btn.classList.add('active');
-  renderWorkOrders();
-}
+function filterWO(status,btn){_woFilter=status;document.querySelectorAll('#p-fieldops .fb').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');renderWorkOrders();}
 
 function renderWorkOrders(){
   const el=document.getElementById('woList');if(!el)return;
@@ -900,33 +835,12 @@ function renderWorkOrders(){
   el.innerHTML=data.map(w=>{
     const sc=(w.status||'open').toLowerCase().replace(/\s+/g,'-');
     const isUrgent=w.priority==='urgent';
-    return`<div class="wo ${sc}">
-      <div class="wo-id">${esc(w.wo_id||'WO-—')}</div>
-      <div class="wo-hd">
-        <div class="wo-title">${esc(w.title||'Untitled')}</div>
-        <div class="wo-badges">
-          ${isUrgent?'<span class="wo-badge urgent">⬡ Urgent</span>':''}
-          ${w.type?`<span class="wo-badge type">${esc(w.type)}</span>`:''}
-          <span class="wo-badge ${sc}">${esc(w.status||'Open')}</span>
-        </div>
-      </div>
-      <div class="wo-meta">
-        ${w.property?`<div><div class="wm-lbl">Property</div><div class="wm-val">${esc(w.property)}</div></div>`:''}
-        <div><div class="wm-lbl">Reported</div><div class="wm-val">${w.created_at?new Date(w.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'—'}</div></div>
-        <div><div class="wm-lbl">Assigned To</div><div class="wm-val">${esc(w.vendor||'Unassigned')}</div></div>
-        ${w.cost?`<div><div class="wm-lbl">Est. Cost</div><div class="wm-val">${esc(w.cost)}</div></div>`:''}
-      </div>
-      ${w.notes?`<div class="wo-note">${esc(w.notes)}</div>`:''}
-    </div>`;
+    return`<div class="wo ${sc}"><div class="wo-id">${esc(w.wo_id||'WO-—')}</div><div class="wo-hd"><div class="wo-title">${esc(w.title||'Untitled')}</div><div class="wo-badges">${isUrgent?'<span class="wo-badge urgent">⬡ Urgent</span>':''}${w.type?`<span class="wo-badge type">${esc(w.type)}</span>`:''}<span class="wo-badge ${sc}">${esc(w.status||'Open')}</span></div></div><div class="wo-meta">${w.property?`<div><div class="wm-lbl">Property</div><div class="wm-val">${esc(w.property)}</div></div>`:''}<div><div class="wm-lbl">Reported</div><div class="wm-val">${w.created_at?new Date(w.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'—'}</div></div><div><div class="wm-lbl">Assigned To</div><div class="wm-val">${esc(w.vendor||'Unassigned')}</div></div>${w.cost?`<div><div class="wm-lbl">Est. Cost</div><div class="wm-val">${esc(w.cost)}</div></div>`:''}</div>${w.notes?`<div class="wo-note">${esc(w.notes)}</div>`:''}</div>`;
   }).join('');
 }
 
-function renderWorkOrdersFallback(){
-  const el=document.getElementById('woList');
-  if(el)el.innerHTML='<div class="empty" style="padding:1.5rem">Unable to load work orders. Check Supabase table <strong>t5s_work_orders</strong> exists.</div>';
-}
+function renderWorkOrdersFallback(){const el=document.getElementById('woList');if(el)el.innerHTML='<div class="empty" style="padding:1.5rem">Unable to load work orders. Check Supabase table <strong>t5s_work_orders</strong> exists.</div>';}
 
-/* NEW WORK ORDER */
 function showNewWOForm(){setDisplay('newWOForm','block');const m=document.getElementById('main');if(m)setTimeout(()=>m.scrollTo({top:m.scrollHeight,behavior:'smooth'}),100);}
 function hideNewWOForm(){setDisplay('newWOForm','none')}
 
@@ -947,47 +861,24 @@ async function submitWO(){
     if(!res.ok){const t=await res.text();throw new Error(t);}
     const created=await res.json();
     _workOrders.unshift(Array.isArray(created)?created[0]:created);
-    renderWorkOrders();
-    updateOpsStats();
-    hideNewWOForm();
-    // Clear fields
+    renderWorkOrders();updateOpsStats();hideNewWOForm();
     ['woTitle','woProperty','woVendor','woCost','woNotes'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
-    document.getElementById('woType').value='';
-    document.getElementById('woPriority').value='normal';
-    toast('Work order created');
-    logAct(`New work order: ${title}`);
-  }catch(e){
-    console.error(e);toast('Failed to create work order',true);
-  }finally{
-    if(btn){btn.disabled=false;btn.textContent='Submit Work Order';}
-  }
+    document.getElementById('woType').value='';document.getElementById('woPriority').value='normal';
+    toast('Work order created');logAct(`New work order: ${title}`);
+  }catch(e){console.error(e);toast('Failed to create work order',true);}
+  finally{if(btn){btn.disabled=false;btn.textContent='Submit Work Order';}}
 }
 
-/* ── VENDORS ── */
 function renderVendors(){
   const el=document.getElementById('vendorList');if(!el)return;
   if(!_vendors.length){el.innerHTML='<div class="empty" style="padding:1rem">No vendors on file.</div>';return;}
   el.innerHTML=_vendors.map(v=>{
     const stars=[1,2,3,4,5].map(i=>`<div class="vn-star${i>(v.rating||0)?' empty':''}"></div>`).join('');
-    return`<div class="vendor-row">
-      <div>
-        <div class="vn-name">${esc(v.name||'—')}</div>
-        <div class="vn-trade">${esc(v.trade||'—')}</div>
-        <div class="vn-contact">${[v.phone,v.email].filter(Boolean).map(esc).join(' · ')||'—'}</div>
-      </div>
-      <div style="text-align:right">
-        <div class="vn-stars">${stars}</div>
-        <div class="${v.active!==false?'vn-status-ok':'vn-status-na'}">${v.active!==false?'Active':'Inactive'}</div>
-      </div>
-    </div>`;
+    return`<div class="vendor-row"><div><div class="vn-name">${esc(v.name||'—')}</div><div class="vn-trade">${esc(v.trade||'—')}</div><div class="vn-contact">${[v.phone,v.email].filter(Boolean).map(esc).join(' · ')||'—'}</div></div><div style="text-align:right"><div class="vn-stars">${stars}</div><div class="${v.active!==false?'vn-status-ok':'vn-status-na'}">${v.active!==false?'Active':'Inactive'}</div></div></div>`;
   }).join('');
 }
 
-function renderVendorsFallback(){
-  const el=document.getElementById('vendorList');
-  if(el)el.innerHTML='<div class="empty" style="padding:1rem">Unable to load. Check table <strong>t5s_vendors</strong>.</div>';
-}
-
+function renderVendorsFallback(){const el=document.getElementById('vendorList');if(el)el.innerHTML='<div class="empty" style="padding:1rem">Unable to load. Check table <strong>t5s_vendors</strong>.</div>';}
 function showAddVendorForm(){setDisplay('addVendorForm','block')}
 function hideAddVendorForm(){setDisplay('addVendorForm','none')}
 
@@ -1004,15 +895,12 @@ async function submitVendor(){
     const created=await res.json();
     _vendors.push(Array.isArray(created)?created[0]:created);
     _vendors.sort((a,b)=>(a.name||'').localeCompare(b.name||''));
-    renderVendors();
-    hideAddVendorForm();
+    renderVendors();hideAddVendorForm();
     ['vName','vTrade','vPhone','vEmail'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
-    toast(`${name} added to vendor directory`);
-    logAct(`Added vendor: ${name}`);
+    toast(`${name} added to vendor directory`);logAct(`Added vendor: ${name}`);
   }catch(e){console.error(e);toast('Failed to add vendor',true);}
 }
 
-/* ── INSPECTIONS ── */
 function renderInspections(){
   const el=document.getElementById('inspList');if(!el)return;
   if(!_inspections.length){el.innerHTML='<div class="empty" style="padding:1rem">No inspections on file.</div>';return;}
@@ -1020,22 +908,11 @@ function renderInspections(){
     const d=i.date?new Date(i.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'—';
     const result=(i.result||'upcoming').toLowerCase();
     const badge=result==='upcoming'?'Upcoming':result==='pass'?'Pass':result==='attention'?'Attention':'Fail';
-    return`<div class="insp-row">
-      <div>
-        <div class="insp-prop">${esc(i.property||'—')}</div>
-        <div class="insp-type">${esc(i.type||'General')}</div>
-        <div class="insp-date">${d}</div>
-      </div>
-      <span class="insp-badge ${result}">${badge}</span>
-    </div>`;
+    return`<div class="insp-row"><div><div class="insp-prop">${esc(i.property||'—')}</div><div class="insp-type">${esc(i.type||'General')}</div><div class="insp-date">${d}</div></div><span class="insp-badge ${result}">${badge}</span></div>`;
   }).join('');
 }
 
-function renderInspectionsFallback(){
-  const el=document.getElementById('inspList');
-  if(el)el.innerHTML='<div class="empty" style="padding:1rem">Unable to load. Check table <strong>t5s_inspections</strong>.</div>';
-}
-
+function renderInspectionsFallback(){const el=document.getElementById('inspList');if(el)el.innerHTML='<div class="empty" style="padding:1rem">Unable to load. Check table <strong>t5s_inspections</strong>.</div>';}
 function showAddInspForm(){setDisplay('addInspForm','block')}
 function hideAddInspForm(){setDisplay('addInspForm','none')}
 
@@ -1051,13 +928,10 @@ async function submitInsp(){
     if(!res.ok)throw new Error(await res.text());
     const created=await res.json();
     _inspections.unshift(Array.isArray(created)?created[0]:created);
-    renderInspections();
-    updateOpsStats();
-    hideAddInspForm();
+    renderInspections();updateOpsStats();hideAddInspForm();
     ['iProperty','iType','iDate'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
     document.getElementById('iResult').value='upcoming';
-    toast('Inspection scheduled');
-    logAct(`Scheduled inspection: ${property}`);
+    toast('Inspection scheduled');logAct(`Scheduled inspection: ${property}`);
   }catch(e){console.error(e);toast('Failed to save inspection',true);}
 }
 
@@ -1090,13 +964,7 @@ function renderOvAnn(){
   if(!items.length){el.innerHTML='<div class="empty">No announcements yet.</div>';return;}
   el.innerHTML=items.map(a=>{
     const previewBody=(a.body||'').slice(0,100)+((a.body||'').length>100?'…':'');
-    return`<div style="padding:.75rem 1.4rem;border-bottom:.5px solid var(--border)">
-      <div style="display:flex;align-items:center;gap:.4rem;margin-bottom:.3rem">
-        ${a.pinned?'<span class="ann-pin-badge">★</span>':''}
-        <div style="font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.1em;color:var(--chrome)">${esc(a.title||'')}</div>
-      </div>
-      ${previewBody?`<div style="font-size:.8rem;font-style:italic;color:var(--dim2);line-height:1.5">${esc(previewBody)}</div>`:''}
-    </div>`;
+    return`<div style="padding:.75rem 1.4rem;border-bottom:.5px solid var(--border)"><div style="display:flex;align-items:center;gap:.4rem;margin-bottom:.3rem">${a.pinned?'<span class="ann-pin-badge">★</span>':''}<div style="font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.1em;color:var(--chrome)">${esc(a.title||'')}</div></div>${previewBody?`<div style="font-size:.8rem;font-style:italic;color:var(--dim2);line-height:1.5">${esc(previewBody)}</div>`:''}</div>`;
   }).join('');
   const last=el.querySelector('div:last-child');if(last)last.style.borderBottom='none';
 }
@@ -1108,17 +976,7 @@ function renderAnnList(){
   else if(_annFilter==='all')data=data.filter(a=>a.division==='All'||a.division==='Vindex');
   else if(_annFilter==='div')data=data.filter(a=>a.division==='Vindex');
   if(!data.length){el.innerHTML='<div class="empty" style="padding:1.5rem">No announcements found.</div>';return;}
-  el.innerHTML=data.map(a=>`<div class="ann${a.pinned?' pinned':''}">
-    <div class="ann-hd">
-      <div>${a.pinned?'<span class="ann-pin-badge">★ Pinned · </span>':''}<span class="ann-title">${esc(a.title||'')}</span></div>
-      <span class="ann-div">${esc(a.division||'All')}</span>
-    </div>
-    <div class="ann-body">${esc(a.body||'')}</div>
-    <div class="ann-ft">
-      <span class="ann-author">${esc(a.author||'t5s Administration')}</span>
-      <span class="ann-time">${new Date(a.created_at).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'})}</span>
-    </div>
-  </div>`).join('');
+  el.innerHTML=data.map(a=>`<div class="ann${a.pinned?' pinned':''}"><div class="ann-hd"><div>${a.pinned?'<span class="ann-pin-badge">★ Pinned · </span>':''}<span class="ann-title">${esc(a.title||'')}</span></div><span class="ann-div">${esc(a.division||'All')}</span></div><div class="ann-body">${esc(a.body||'')}</div><div class="ann-ft"><span class="ann-author">${esc(a.author||'T5S Administration')}</span><span class="ann-time">${new Date(a.created_at).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'})}</span></div></div>`).join('');
 }
 
 function filterAnn(type,btn){_annFilter=type;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderAnnList()}
@@ -1132,7 +990,6 @@ function startCountdown(){
   },1000);
 }
 
-/* ── ACTIVITY ── */
 function renderAct(){
   const el=document.getElementById('actList');if(!el)return;
   if(!_activity.length){el.innerHTML='<div class="empty">No activity yet.</div>';return;}
@@ -1141,7 +998,6 @@ function renderAct(){
   const af=document.getElementById('admFeed');if(af)af.innerHTML=html;
 }
 
-/* ── ADMIN ── */
 function renderAdminPanel(){
   if(!_U?.isAdmin&&_U?.tier!==1)return;
   const allMeta=lsGet('t5s_vindex_members');const ids=Object.keys(allMeta);
@@ -1158,16 +1014,7 @@ function renderMemberList(list){
   if(!list.length){el.innerHTML='<div class="empty">No members found.</div>';return;}
   el.innerHTML=list.map(m=>{
     const tv=parseInt(m.tier)||4;const safeName=esc(m.name||'Unknown');const safeId=m.clerk_id||'';
-    return`<div class="adm-row" id="ar-${safeId}">
-      <div><div style="font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.14em;color:var(--chrome)">${safeName}</div><div style="font-size:.78rem;font-style:italic;color:var(--dim);margin-top:.15rem">${esc(m.email||'')} · ${esc(m.role||'—')}</div></div>
-      <select id="ts-${safeId}" style="background:transparent;border:.5px solid var(--border);color:var(--gold);font-family:'Cinzel',serif;font-size:.4rem;letter-spacing:.12em;padding:.42rem .65rem;cursor:pointer;outline:none;width:100%" ${safeId===_U.uid?'disabled':''}>
-        <option value="1" ${tv===1?'selected':''}>Tier I</option>
-        <option value="2" ${tv===2?'selected':''}>Tier II</option>
-        <option value="3" ${tv===3?'selected':''}>Tier III</option>
-        <option value="4" ${tv===4?'selected':''}>Tier IV</option>
-      </select>
-      <button class="btn sm" onclick="saveTier('${safeId}','${safeName}')" ${safeId===_U.uid?'disabled':''}>Save</button>
-    </div>`;
+    return`<div class="adm-row" id="ar-${safeId}"><div><div style="font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.14em;color:var(--chrome)">${safeName}</div><div style="font-size:.78rem;font-style:italic;color:var(--dim);margin-top:.15rem">${esc(m.email||'')} · ${esc(m.role||'—')}</div></div><select id="ts-${safeId}" style="background:transparent;border:.5px solid var(--border);color:var(--gold);font-family:'Cinzel',serif;font-size:.4rem;letter-spacing:.12em;padding:.42rem .65rem;cursor:pointer;outline:none;width:100%" ${safeId===_U.uid?'disabled':''}><option value="1" ${tv===1?'selected':''}>Tier I</option><option value="2" ${tv===2?'selected':''}>Tier II</option><option value="3" ${tv===3?'selected':''}>Tier III</option><option value="4" ${tv===4?'selected':''}>Tier IV</option></select><button class="btn sm" onclick="saveTier('${safeId}','${safeName}')" ${safeId===_U.uid?'disabled':''}>Save</button></div>`;
   }).join('');
   const rows=el.querySelectorAll('.adm-row');if(rows.length)rows[rows.length-1].style.borderBottom='none';
 }
@@ -1182,7 +1029,6 @@ function saveTier(clerkId,memberName){
   toast(`${memberName} → ${TIER_LABELS[newTier]}`);
 }
 
-/* ── CLERK APPEARANCE ── */
 const APPEARANCE={
   variables:{colorBackground:'#080808',colorText:'#F0EEEC',colorPrimary:'#C8A96E',colorInputBackground:'transparent',colorInputText:'#F0EEEC',borderRadius:'0px',fontFamily:"'Cormorant Garamond',Georgia,serif"},
   elements:{
@@ -1200,7 +1046,6 @@ const APPEARANCE={
   }
 };
 
-/* ── INIT ── */
 window.addEventListener('load', async () => {
   setLoad('Loading Clerk…');
   const hardTimeout=setTimeout(()=>{showError('Authentication timed out.','The auth server did not respond. Try refreshing.');},15000);
