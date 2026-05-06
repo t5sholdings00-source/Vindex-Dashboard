@@ -15,8 +15,8 @@
   <script
     async
     crossorigin="anonymous"
-    data-clerk-publishable-key="pk_live_Y2xlcmsudmluZGV4LndlYXJlbHZvLmNvbSQ"
-    src="https://clerk.vindex.wearelvo.com/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+    data-clerk-publishable-key="pk_live_Y2xlcmsudmluZGV4LndlYXJldDVzLmNvbSQ"
+    src="https://clerk.vindex.wearet5s.com/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
     type="text/javascript"
   ></script>
 
@@ -348,7 +348,7 @@
   <div class="err-msg" id="errMsg">Unable to initialize authentication.</div>
   <div class="err-detail" id="errDetail"></div>
   <button class="btn" onclick="window.location.reload()">↺ Retry</button>
-  <a class="btn ghost" href="https://vindex.wearelvo.com" style="text-decoration:none;display:inline-flex;align-items:center;padding:.7rem 1.2rem">← Return to site</a>
+  <a class="btn ghost" href="https://vindex.wearet5s.com" style="text-decoration:none;display:inline-flex;align-items:center;padding:.7rem 1.2rem">← Return to site</a>
 </div>
 
 <div id="topbar" style="display:none">
@@ -380,7 +380,7 @@
       <div class="nav-item" id="adminNav" data-p="admin" onclick="goTo('admin')" style="display:none"><span class="nav-ico">⬡</span><span class="nav-lbl">Admin</span></div>
     </div>
     <div class="sb-foot">
-      <a class="sb-back" href="https://vindex.wearelvo.com">← vindex.wearelvo.com</a>
+      <a class="sb-back" href="https://vindex.wearet5s.com">← vindex.wearet5s.com</a>
       <div class="live-pip"><div class="pip"></div><span class="pip-txt" id="refreshLabel">Live</span></div>
       <div class="sb-status" id="sbStatus">● Connecting…</div>
     </div>
@@ -702,8 +702,8 @@ function genWOId(){return'WO-'+new Date().getFullYear()+'-'+String(Math.floor(Ma
 /* ── localStorage ── */
 function lsGet(key,fb='{}'){try{return JSON.parse(localStorage.getItem(key)||fb)}catch(e){return JSON.parse(fb)}}
 function lsSet(key,val){try{localStorage.setItem(key,JSON.stringify(val))}catch(e){}}
-function getMemberMeta(uid){return lsGet('lvo_vindex_members')[uid]||null}
-function setMemberMeta(uid,data){const d=lsGet('lvo_vindex_members');d[uid]=data;lsSet('lvo_vindex_members',d)}
+function getMemberMeta(uid){return lsGet('t5s_vindex_members')[uid]||null}
+function setMemberMeta(uid,data){const d=lsGet('t5s_vindex_members');d[uid]=data;lsSet('t5s_vindex_members',d)}
 
 /* ── NAVIGATION ── */
 function goTo(id){
@@ -826,17 +826,17 @@ function renderFin(props,tier,isAdmin){
 /* ══════════════════════════════════
    FIELD OPS — Supabase integration
    Tables needed:
-     lvo_work_orders  — id, wo_id, title, property, type, priority, status, vendor, cost, notes, created_at, updated_at
-     lvo_vendors      — id, name, trade, phone, email, rating, active, created_at
-     lvo_inspections  — id, property, type, date, result, created_at
+     t5s_work_orders  — id, wo_id, title, property, type, priority, status, vendor, cost, notes, created_at, updated_at
+     t5s_vendors      — id, name, trade, phone, email, rating, active, created_at
+     t5s_inspections  — id, property, type, date, result, created_at
    ══════════════════════════════════ */
 
 async function fetchFieldOps(manual=false){
   try{
     const [woRes,vRes,iRes]=await Promise.all([
-      fetch(`${SB_URL}/rest/v1/lvo_work_orders?select=*&order=created_at.desc`,{headers:SB_H}),
-      fetch(`${SB_URL}/rest/v1/lvo_vendors?select=*&order=name.asc`,{headers:SB_H}),
-      fetch(`${SB_URL}/rest/v1/lvo_inspections?select=*&order=date.desc`,{headers:SB_H})
+      fetch(`${SB_URL}/rest/v1/t5s_work_orders?select=*&order=created_at.desc`,{headers:SB_H}),
+      fetch(`${SB_URL}/rest/v1/t5s_vendors?select=*&order=name.asc`,{headers:SB_H}),
+      fetch(`${SB_URL}/rest/v1/t5s_inspections?select=*&order=date.desc`,{headers:SB_H})
     ]);
 
     if(woRes.ok) _workOrders=await woRes.json(); else _workOrders=[];
@@ -853,6 +853,7 @@ async function fetchFieldOps(manual=false){
     console.error('fetchFieldOps',e);
     setSbStatus(false,'Supabase error');
     if(manual)toast('Refresh failed',true);
+    // Graceful fallback: show empty state instead of broken UI
     renderWorkOrdersFallback();
     renderVendorsFallback();
     renderInspectionsFallback();
@@ -868,12 +869,14 @@ function updateOpsStats(){
   setText('opsInProg',String(inProg||'0'));
   setText('opsDone',String(done||'0'));
 
+  // Next upcoming inspection
   const upcoming=_inspections.filter(i=>i.result==='upcoming'&&i.date).sort((a,b)=>new Date(a.date)-new Date(b.date));
   if(upcoming.length){
     const d=new Date(upcoming[0].date);
     setText('opsNextInsp',d.toLocaleDateString('en-US',{month:'short',day:'numeric'}));
   }else setText('opsNextInsp','None');
 
+  // Badge for open urgent orders
   if(open>0){
     const ob=document.getElementById('opsBadge');if(ob)ob.style.display='block';
     const dot=document.getElementById('bnOpsDot');if(dot)dot.classList.add('show');
@@ -919,7 +922,7 @@ function renderWorkOrders(){
 
 function renderWorkOrdersFallback(){
   const el=document.getElementById('woList');
-  if(el)el.innerHTML='<div class="empty" style="padding:1.5rem">Unable to load work orders. Check Supabase table <strong>lvo_work_orders</strong> exists.</div>';
+  if(el)el.innerHTML='<div class="empty" style="padding:1.5rem">Unable to load work orders. Check Supabase table <strong>t5s_work_orders</strong> exists.</div>';
 }
 
 /* NEW WORK ORDER */
@@ -939,13 +942,14 @@ async function submitWO(){
   if(btn){btn.disabled=true;btn.textContent='Submitting…';}
   try{
     const payload={wo_id:genWOId(),title,property,type,priority,status:'open',vendor:vendor||null,cost:cost||null,notes:notes||null,created_at:new Date().toISOString(),updated_at:new Date().toISOString()};
-    const res=await fetch(`${SB_URL}/rest/v1/lvo_work_orders`,{method:'POST',headers:{...SB_H,'Prefer':'return=representation'},body:JSON.stringify(payload)});
+    const res=await fetch(`${SB_URL}/rest/v1/t5s_work_orders`,{method:'POST',headers:{...SB_H,'Prefer':'return=representation'},body:JSON.stringify(payload)});
     if(!res.ok){const t=await res.text();throw new Error(t);}
     const created=await res.json();
     _workOrders.unshift(Array.isArray(created)?created[0]:created);
     renderWorkOrders();
     updateOpsStats();
     hideNewWOForm();
+    // Clear fields
     ['woTitle','woProperty','woVendor','woCost','woNotes'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
     document.getElementById('woType').value='';
     document.getElementById('woPriority').value='normal';
@@ -980,7 +984,7 @@ function renderVendors(){
 
 function renderVendorsFallback(){
   const el=document.getElementById('vendorList');
-  if(el)el.innerHTML='<div class="empty" style="padding:1rem">Unable to load. Check table <strong>lvo_vendors</strong>.</div>';
+  if(el)el.innerHTML='<div class="empty" style="padding:1rem">Unable to load. Check table <strong>t5s_vendors</strong>.</div>';
 }
 
 function showAddVendorForm(){setDisplay('addVendorForm','block')}
@@ -994,7 +998,7 @@ async function submitVendor(){
   if(!name){toast('Vendor name required',true);return;}
   try{
     const payload={name,trade:trade||null,phone:phone||null,email:email||null,rating:0,active:true,created_at:new Date().toISOString()};
-    const res=await fetch(`${SB_URL}/rest/v1/lvo_vendors`,{method:'POST',headers:{...SB_H,'Prefer':'return=representation'},body:JSON.stringify(payload)});
+    const res=await fetch(`${SB_URL}/rest/v1/t5s_vendors`,{method:'POST',headers:{...SB_H,'Prefer':'return=representation'},body:JSON.stringify(payload)});
     if(!res.ok)throw new Error(await res.text());
     const created=await res.json();
     _vendors.push(Array.isArray(created)?created[0]:created);
@@ -1028,7 +1032,7 @@ function renderInspections(){
 
 function renderInspectionsFallback(){
   const el=document.getElementById('inspList');
-  if(el)el.innerHTML='<div class="empty" style="padding:1rem">Unable to load. Check table <strong>lvo_inspections</strong>.</div>';
+  if(el)el.innerHTML='<div class="empty" style="padding:1rem">Unable to load. Check table <strong>t5s_inspections</strong>.</div>';
 }
 
 function showAddInspForm(){setDisplay('addInspForm','block')}
@@ -1042,7 +1046,7 @@ async function submitInsp(){
   if(!property||!date){toast('Property and date required',true);return;}
   try{
     const payload={property,type:type||'General',date,result,created_at:new Date().toISOString()};
-    const res=await fetch(`${SB_URL}/rest/v1/lvo_inspections`,{method:'POST',headers:{...SB_H,'Prefer':'return=representation'},body:JSON.stringify(payload)});
+    const res=await fetch(`${SB_URL}/rest/v1/t5s_inspections`,{method:'POST',headers:{...SB_H,'Prefer':'return=representation'},body:JSON.stringify(payload)});
     if(!res.ok)throw new Error(await res.text());
     const created=await res.json();
     _inspections.unshift(Array.isArray(created)?created[0]:created);
@@ -1060,7 +1064,7 @@ async function submitInsp(){
 async function fetchAnn(manual=false){
   _annSec=900;
   try{
-    const res=await fetch(`${SB_URL}/rest/v1/lvo_announcements?select=*&order=pinned.desc,created_at.desc`,{headers:SB_H});
+    const res=await fetch(`${SB_URL}/rest/v1/t5s_announcements?select=*&order=pinned.desc,created_at.desc`,{headers:SB_H});
     if(!res.ok){const txt=await res.text();throw new Error(`${res.status}: ${txt}`);}
     _ann=await res.json();
     renderAnnList();renderOvAnn();
@@ -1110,7 +1114,7 @@ function renderAnnList(){
     </div>
     <div class="ann-body">${esc(a.body||'')}</div>
     <div class="ann-ft">
-      <span class="ann-author">${esc(a.author||'T5S Administration')}</span>
+      <span class="ann-author">${esc(a.author||'t5s Administration')}</span>
       <span class="ann-time">${new Date(a.created_at).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'})}</span>
     </div>
   </div>`).join('');
@@ -1139,7 +1143,7 @@ function renderAct(){
 /* ── ADMIN ── */
 function renderAdminPanel(){
   if(!_U?.isAdmin&&_U?.tier!==1)return;
-  const allMeta=lsGet('lvo_vindex_members');const ids=Object.keys(allMeta);
+  const allMeta=lsGet('t5s_vindex_members');const ids=Object.keys(allMeta);
   setText('admTotal',String(ids.length||1));
   _members=ids.map(id=>({clerk_id:id,...allMeta[id]}));
   renderMemberList(_members);
@@ -1236,13 +1240,13 @@ window.addEventListener('load', async () => {
     setTimeout(()=>{unsub();resolve(null);},5000);
   });
   if(sessionUser){await showDash(sessionUser);}
-  else{clearTimeout(hardTimeout);setLoad('Redirecting…');setTimeout(()=>{window.location.href='https://vindex.wearelvo.com';},800);}
+  else{clearTimeout(hardTimeout);setLoad('Redirecting…');setTimeout(()=>{window.location.href='https://vindex.wearet5s.com';},800);}
 
   Clerk.addListener(({user})=>{
     if(!user){
       _dashboardPopulated=false;_clerkProfileMounted=false;
       clearInterval(_annTimer);
-      window.location.href='https://vindex.wearelvo.com';
+      window.location.href='https://vindex.wearet5s.com';
     }
   });
 });
